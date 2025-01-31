@@ -35,12 +35,12 @@ export class EmployeePage {
       await this.page.click(this.searchButton);
     }
   
-    async verifyEmployeeExists(name: string) {
+    async verifyEmployeeExists() {
       await this.page.waitForSelector('.orangehrm-edit-employee-name', { state: 'visible' });
       return this.page.isVisible('.orangehrm-edit-employee-name');
     }
 
-    async verifySearchedEmployee(name: string) {
+    async verifySearchedEmployee() {
       await this.page.waitForSelector(this.verify, { state: 'visible' });
       return this.page.isVisible(this.verify);
     }
